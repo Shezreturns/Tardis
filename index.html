@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./makeup.css">
+    <meta name="description" content="The TARDIS Beauty Emporium: Dubai's at-home lash & brow specialists. Lash extensions, lash lifts, brow lamination, microblading & beauty training in Jumeirah Lake Towers.">
+    <title>The TARDIS Beauty Emporium | Lash & Brow Specialists, Dubai</title>
+    <style>
+        /* Simple, clean gallery box — modern, minimal hero visual */
+        .hero-gallery {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 3 / 4;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px -12px rgba(37,37,95,0.25);
+            border: 1px solid rgba(255,255,255,0.5);
+            background: #f4f4f6;
+        }
+
+        @media (min-width: 576px) {
+            .hero-gallery {
+                max-width: 360px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .hero-gallery {
+                max-width: 400px;
+            }
+        }
+
+        .hero-gallery .carousel,
+        .hero-gallery .carousel-inner,
+        .hero-gallery .carousel-item {
+            height: 100%;
+        }
+
+        .hero-gallery .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            border-radius: 0;
+        }
+
+        /* Subtle gradient at the bottom so dots sit on readable ground,
+           without adding extra colors to the design */
+        .hero-gallery::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 70px;
+            background: linear-gradient(to top, rgba(0,0,0,0.35), rgba(0,0,0,0));
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Clean, smooth crossfade */
+        #phoneCarousel.carousel-fade .carousel-item {
+            transition: opacity 0.7s ease;
+        }
+
+        /* Minimal single-color dot indicators */
+        .phone-carousel-indicators {
+            position: absolute;
+            bottom: 14px;
+            margin: 0;
+            z-index: 3;
+            gap: 6px;
+        }
+
+        .phone-carousel-indicators [data-bs-target] {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.55);
+            border: none;
+            opacity: 1;
+            margin: 0;
+            transition: width 0.25s ease, background-color 0.25s ease;
+        }
+
+        .phone-carousel-indicators [data-bs-target].active {
+            width: 16px;
+            border-radius: 4px;
+            background-color: #E8BDFF;
+        }
+
+        /* Training Academy Section */
+        .training-section {
+            background: linear-gradient(135deg, #25255f, #6b4a8a 55%, #a97fbf);
+            margin-top: 20px;
+            padding: 10px 0;
+        }
+
+        .training-badge {
+            display: inline-block;
+            background: #E8BDFF;
+            color: #25255f;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 30px;
+            margin-bottom: 14px;
+        }
+
+        .training-title {
+            color: #fff;
+            font-weight: 800;
+            font-size: 2.1rem;
+            font-style: italic;
+            margin-bottom: 14px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .training-text {
+            color: #f0e6f7;
+            font-size: 1.02rem;
+            margin-bottom: 20px;
+        }
+
+        .training-locations {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .training-locations span {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.35);
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .training-cta {
+            background: #E8BDFF;
+            color: #25255f;
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 30px;
+            border: none;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .training-cta:hover {
+            background: #fff;
+            color: #25255f;
+            transform: translateY(-2px);
+        }
+
+        .training-collage {
+            width: 100%;
+            height: auto;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+            display: block;
+        }
+
+        @media (max-width: 991px) {
+            .training-locations {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .training-title {
+                font-size: 1.6rem;
+            }
+            .training-text {
+                font-size: 0.92rem;
+            }
+            .training-locations span {
+                font-size: 0.78rem;
+                padding: 5px 10px;
+            }
+            .training-section {
+                padding: 6px 0;
+            }
+        }
+
+        /* Purpose / lead-routing section */
+        .purpose-section {
+            background: #f7f3fb;
+            padding: 10px 0 30px;
+        }
+
+        .purpose-title {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 800;
+            color: #25255f;
+            font-size: 2rem;
+        }
+
+        .purpose-sub {
+            color: #666;
+        }
+
+        .purpose-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px 22px;
+            text-align: center;
+            height: 100%;
+            box-shadow: 0 8px 20px rgba(37,37,95,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .purpose-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 28px rgba(37,37,95,0.16);
+        }
+
+        .purpose-icon {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .purpose-card h3 {
+            color: #25255f;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .purpose-card p {
+            color: #555;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            flex: 1;
+            margin-bottom: 18px;
+        }
+
+        .purpose-btn {
+            display: inline-block;
+            background: #25255f;
+            color: #fff !important;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 10px 18px;
+            border-radius: 24px;
+            transition: background 0.2s ease;
+        }
+
+        .purpose-btn:hover {
+            background: #a97fbf;
+        }
+
+        .purpose-btn-alt {
+            background: #E8BDFF;
+            color: #25255f !important;
+        }
+
+        .purpose-btn-alt:hover {
+            background: #d99cf5;
+        }
+
+        @media (max-width: 480px) {
+            .purpose-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* Header: wrap cleanly on narrow screens instead of overflowing */
+        .site-header-inner {
+            flex-wrap: wrap;
+            row-gap: 12px;
+        }
+
+        .site-header-nav {
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 767px) {
+            .site-header-inner {
+                justify-content: center !important;
+                text-align: center;
+            }
+
+            .site-header-nav {
+                justify-content: center;
+                width: 100%;
+                gap: 8px !important;
+            }
+
+            .site-header-nav .btn {
+                padding: 8px 14px;
+                font-size: 0.85rem;
+            }
+
+            .image-logo {
+                height: 50px !important;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .site-header-nav .btn {
+                padding: 6px 10px;
+                font-size: 0.78rem;
+            }
+        }
+
+        .hero-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .hero-book-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #25255f;
+            color: #E8BDFF;
+            font-weight: 700;
+            padding: 13px 26px;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(37,37,95,0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .hero-book-btn:hover {
+            color: #E8BDFF;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 26px rgba(37,37,95,0.45);
+        }
+
+        .hero-whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #fff;
+            color: #25255f;
+            font-weight: 700;
+            padding: 13px 26px;
+            border-radius: 30px;
+            text-decoration: none;
+            border: 2px solid #25255f;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .hero-whatsapp-btn:hover {
+            color: #25255f;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(37,37,95,0.2);
+        }
+
+        /* Floating sticky Book Now button */
+        .booknow-float {
+            position: fixed;
+            bottom: 22px;
+            right: 92px;
+            background-color: #25255f;
+            color: #E8BDFF;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+            z-index: 1050;
+            transition: transform 0.2s ease;
+        }
+
+        .booknow-float:hover {
+            color: #E8BDFF;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 480px) {
+            .booknow-float {
+                bottom: 16px;
+                right: 78px;
+                padding: 12px 16px;
+                font-size: 0.85rem;
+            }
+            .booknow-float .btn-label {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+     <!--the banner part -->
+    <header class="container-fluid py-3 site-header">
+        <div class="d-flex justify-content-between align-items-center site-header-inner">
+          
+          <!-- Left Side: Logo + Company Name -->
+          <div class="d-flex align-items-center">
+            <img class="image-logo" src="./photo_2025-07-27_10-59-37.jpg" alt="Logo" style="height: 70px; width: auto; margin-right: 10px; border-radius: 50%; "  >
+            <h1 class="h5 m-0" class="the-logo-name" style="font-style:italic ; font-weight: bold; color: white;">The Tardis Beauty</h1>
+          </div>
+      
+          <!-- Right Side: Contact Button -->
+          <div class="d-flex align-items-center site-header-nav" style="gap: 10px;">
+            <a href="./blog.html" class="btn btn-outline-primary" style="background-color:#25255f; border-color:white; color: #E8BDFF;">Blog</a>
+            <a href="./about-us.html" class="btn btn-outline-primary" style="background-color :#25255f; border-color:white; color: #E8BDFF; ">About us</a>
+          </div>
+        </div>
+      </header>
+      <div class="container col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-5 py-5">
+      
+          <!-- Text and Button (Always on top in mobile) -->
+          <div class="col-lg-6 order-1 order-lg-1">
+            <h1 class="display-5 fw-bold lh-1 mb-3" style="font-size: 54px; font-style: italic; ">Book your glow today</h1>
+            <p class="lead">Dubai's at-home lash &amp; brow specialists — find and book your service.</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <div class="search-container">
+                <input type="text" id="serviceSearch" placeholder="Search our services..." style="font-style: italic; font-size: 12px;">
+              </div>
+              <div>
+               
+            <div class="search-container">
+   
+             </div>
+            </div>
+            </div>
+            <div class="hero-cta-row">
+              <a href="https://thetardisbeauty.setmore.com/" target="_blank" rel="noopener" class="hero-book-btn">📅 Book Now Online</a>
+              <a href="https://wa.me/971585784100?text=Hi!%20I'd%20like%20to%20book%20a%20beauty%20service" target="_blank" rel="noopener" class="hero-whatsapp-btn">💬 WhatsApp Us</a>
+            </div>
+            <p class="mt-3 mb-0" style="font-weight:600; color:#25255f;">💎 Membership — Coming Soon</p>
+          </div>
+      
+          <!-- Simple gallery box with carousel (Goes below text on mobile) -->
+          <div class="col-12 col-sm-9 col-md-7 col-lg-6 mx-auto d-flex justify-content-center order-2 order-lg-2">
+            <div class="hero-gallery">
+              <div id="phoneCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-touch="true">
+                  <div class="carousel-inner h-100">
+                    <div class="carousel-item active h-100">
+                      <img src="./lash-gallery-9.jpg" class="d-block w-100" alt="Volume eyelash extensions close-up">
+                    </div>
+                    <div class="carousel-item h-100">
+                      <img src="./lash-gallery-10.jpg" class="d-block w-100" alt="Client with fresh lash extensions">
+                    </div>
+                    <div class="carousel-item h-100">
+                      <img src="./brow-gallery-2.jpg" class="d-block w-100" alt="Fluffy laminated brow close-up">
+                    </div>
+                    <div class="carousel-item h-100">
+                      <img src="./lash-gallery-8.jpg" class="d-block w-100" alt="Client with lash extensions close-up">
+                    </div>
+                    <div class="carousel-item h-100">
+                      <img src="./lash-gallery-3.jpg" class="d-block w-100" alt="Eyelash extensions side profile">
+                    </div>
+                    <div class="carousel-item h-100">
+                      <img src="./lash-gallery-2.jpg" class="d-block w-100" alt="Lash line close-up">
+                    </div>
+                  </div>
+                  <div class="carousel-indicators phone-carousel-indicators">
+                    <button type="button" data-bs-target="#phoneCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#phoneCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#phoneCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#phoneCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#phoneCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#phoneCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                  </div>
+                </div>
+              </div>
+          </div>
+      
+        </div>
+      </div>
+      
+            </div>
+        </div>
+    </div>
+    <!-- Beauty Staff Section -->
+<section class="container my-5 py-5" id="our-team">
+    <div class="text-center mb-5">
+        <h2 class="display-4 fw-bold">Our Services</h2>
+        <p class="lead">Dubai's at-home lash &amp; brow specialists — treatments designed to make you feel confident and radiant.</p>
+        <span class="training-badge" style="background:#25255f; color:#E8BDFF;">💎 Membership — Coming Soon</span>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+        <!-- Eyelash Services -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card staff-card h-100 border-0 shadow-sm">
+                <img src="./lash-gallery-9.jpg" class="card-img-top" alt="Eyelash extensions close-up" loading="lazy">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Eyelash Services</h5>
+                    <div class="d-flex justify-content-center">
+                        <a href="./eyelash.html" class="btn btn-sm btn-outline-primary mx-1" style="color: black;">check it </a>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Brows Services -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card staff-card h-100 border-0 shadow-sm">
+                <img src="./brow-gallery-2.jpg" class="card-img-top" alt="Laminated, tinted brows close-up" loading="lazy">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Brows Services
+                    </h5>
+                   
+                    <div class="d-flex justify-content-center">
+                        <a href="./brows.html" class="btn btn-sm btn-outline-primary mx-1" style="color: black;">check it </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+      
+      
+          
+     
+          <!-- Add more images here -->
+        </div>
+      </div>
+
+      <!-- Training Academy Section - visually separated -->
+      <section class="training-section" id="training">
+        <div class="container py-5">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-6 order-2 order-lg-1 text-center text-lg-start">
+              <span class="training-badge">Beauty Academy</span>
+              <h2 class="training-title">Become a Certified Beauty Pro</h2>
+              <p class="training-text">Join our hands-on training courses in lash, brow &amp; beauty artistry and get certified by Millionaire Premium. Classes run across the UAE, so pick the city nearest you.</p>
+              <div class="training-locations">
+                <span>📍 Dubai</span>
+                <span>📍 Abu Dhabi</span>
+                <span>📍 Sharjah</span>
+                <span>📍 Fujairah</span>
+                <span>📍 Al Ain</span>
+              </div>
+              <a href="https://www.instagram.com/millionairebeautyuae?igsh=Nndkd2g2bGxsd3gx" target="_blank" rel="noopener" class="btn training-cta">See Training Courses</a>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2">
+              <img src="./training-collage.jpg" alt="Beauty training graduates holding certificates across UAE cities" class="training-collage" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr style="border: 1px solid #ccc; margin-top: 0;">
+
+      <!-- What are you looking for CTA section -->
+      <section class="purpose-section" id="get-started">
+        <div class="container py-5">
+          <div class="text-center mb-4">
+            <h2 class="purpose-title">What Are You Looking For?</h2>
+            <p class="purpose-sub">Tell us what you need and we'll point you the right way.</p>
+          </div>
+          <div class="row g-4 justify-content-center">
+            <div class="col-md-4">
+              <div class="purpose-card">
+                <div class="purpose-icon">🎓</div>
+                <h3>Book Training</h3>
+                <p>Want to become a certified lash, brow or beauty artist? Chat with us about our courses and upcoming batches.</p>
+                <a href="https://wa.me/971585784100?text=Hi!%20I'd%20like%20to%20know%20more%20about%20your%20beauty%20training%20courses" target="_blank" rel="noopener" class="purpose-btn">Message on WhatsApp</a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="purpose-card">
+                <div class="purpose-icon">🏠</div>
+                <h3>Book a Home Service</h3>
+                <p>Get lash extensions, lash lifts or brow lamination &amp; microblading done in the comfort of your own home. Send us your area and preferred time.</p>
+                <a href="https://wa.me/971585784100?text=Hi!%20I'd%20like%20to%20book%20a%20home%20beauty%20service" target="_blank" rel="noopener" class="purpose-btn">Message on WhatsApp</a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="purpose-card">
+                <div class="purpose-icon">✨</div>
+                <h3>See Our Work</h3>
+                <p>Browse real client results, before-and-afters and everyday looks from our team on Instagram.</p>
+                <a href="https://www.instagram.com/thetardisbeauty" target="_blank" rel="noopener" class="purpose-btn purpose-btn-alt">View Instagram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-left">
+            <h4>The TARDIS Beauty Emporium</h4>
+            <p>Jumeirah Lake Towers - Dubai - United Arab Emirates</p>
+            <p>Phone: <a href="tel:+971585784100">+971 58 578 4100</a></p>
+          </div>
+          <div class="footer-right">
+            <p class="footer-follow-label">Follow us on</p>
+            <a href="https://www.instagram.com/thetardisbeauty" target="_blank" rel="noopener" class="insta-link">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-icon">
+              @thetardisbeauty
+            </a>
+          </div>
+        </div>
+        <p class="footer-bottom">© 2026 The TARDIS Beauty Emporium. All rights reserved.</p>
+      </footer>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    
+        
+    
+ 
+        <script>
+
+    //Initialize carousel with options
+        document.addEventListener('DOMContentLoaded', function() {
+            var phoneCarousel = new bootstrap.Carousel(document.getElementById('phoneCarousel'), {
+                interval: 2800, // slightly snappier so mobile swipes feel more alive
+                ride: 'carousel',
+                pause: 'hover', // Pause on hover/touch
+                wrap: true,     // Infinite looping
+                touch: true     // Explicit swipe support on mobile
+            });
+        });
+    // Service data - this should match all your services across all pages
+    const services = [
+        {
+            name: "lash lift with tinting",
+            description: "A natural lash enhancement that lifts and curls your lashes...",
+            price: "AED 250",
+            category: "Eyelash Services",
+            page: "eyelash.html"
+        },
+        {
+            name: "classic lash extentions",
+            description: "One extension is applied to each natural lash for a clean, elegant look...",
+            price: "AED 250",
+            category: "Eyelash Services",
+            page: "eyelash.html"
+        },
+        {
+            name: "2D Lash Extensions",
+            description: "Two lightweight lashes are applied to one natural lash...",
+            price: "AED 280",
+            category: "Eyelash Services",
+            page: "eyelash.html"
+        },
+        {
+            name: "3D Lash Extensions",
+            description: "Three ultra-fine extensions per natural lash for a bold, voluminous effect...",
+            price: "AED 300",
+            category: "Eyelash Services",
+            page: "eyelash.html"
+        },
+        {
+            name: "Brow Lamination with Tinting",
+            description: "A semi-permanent treatment that straightens and sets brow hairs...",
+            price: "AED 250",
+            category: "Brows Services",
+            page: "brows.html"
+        },
+        {
+            name: "Microblading (new)",
+            description: "Hand-drawn, hair-like strokes using pigment to create natural-looking...",
+            price: "AED 950",
+            category: "Brows Services",
+            page: "brows.html"
+        },
+        {
+            name: "Microblading (touch up)",
+            description: "A refresh session to maintain color and shape...",
+            price: "AED 550",
+            category: "Brows Services",
+            page: "brows.html"
+        }
+    ];
+
+    // Search functionality
+    // Search functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById("serviceSearch");
+    
+    // Create search results container (this is correct)
+    const searchResults = document.createElement("div");
+    searchResults.id = "searchResults";
+    searchResults.style.position = "absolute";
+    searchResults.style.backgroundColor = "white";
+    searchResults.style.width = "calc(100% - 20px)";
+    searchResults.style.maxHeight = "200px";
+    searchResults.style.overflowY = "auto";
+    searchResults.style.boxShadow = "0 2px 5px rgba(0,0,0,0.1)";
+    searchResults.style.zIndex = "1000";
+    searchResults.style.display = "none";
+    searchResults.style.borderRadius = "4px";
+    searchResults.style.marginTop = "5px";
+    searchResults.style.fontSize = "0.9em";
+    searchResults.style.border = "1px solid #eee";
+    searchInput.parentNode.appendChild(searchResults);
+
+    searchInput.addEventListener("input", function() {
+        const value = this.value.toLowerCase();
+        
+        if (value.length < 2) {
+            searchResults.style.display = "none";
+            return;
+        }
+        
+        const filteredServices = services.filter(service => 
+            service.name.toLowerCase().includes(value) || 
+            service.description.toLowerCase().includes(value) ||
+            service.category.toLowerCase().includes(value)
+        );
+        
+        if (filteredServices.length > 0) {
+            // This is where you put the new compact results HTML
+            searchResults.innerHTML = filteredServices.map(service => `
+                <div class="search-result-item" 
+                     style="padding: 4px 6px; 
+                            border-bottom: 1px solid #f5f5f5; 
+                            cursor: pointer;
+                            line-height: 1.3;
+                           
+                            "
+                     data-page="${service.page}"
+                     data-service="${service.name}">
+                    <strong style="font-size: 0.95em;">${service.name}</strong>
+                    <div style="font-size: 0.8em; color: #666; margin-top: 2px;">${service.category}</div>
+                    <div style="font-size: 0.8em; color: #25255f; margin-top: 2px;">${service.price}</div>
+                </div>
+            `).join("");
+            
+            searchResults.style.display = "block";
+            
+            // Add click handlers to each result
+            document.querySelectorAll(".search-result-item").forEach(item => {
+                item.addEventListener("click", function() {
+                    const page = this.getAttribute("data-page");
+                    const service = this.getAttribute("data-service");
+                    sessionStorage.setItem("scrollToService", service);
+                    window.location.href = page;
+                });
+            });
+        } else {
+            searchResults.innerHTML = `<div style="padding: 10px; color: #666;">No services found</div>`;
+            searchResults.style.display = "block";
+        }
+    });
+    
+    // Hide results when clicking outside
+    document.addEventListener("click", function(e) {
+        if (e.target !== searchInput) {
+            searchResults.style.display = "none";
+        }
+    });
+});
+ 
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById("serviceSearch");
+    const mainContent = document.querySelector('body > .container'); // Adjust selector as needed
+    const overlay = document.createElement('div');
+    overlay.id = 'overlay';
+    document.body.appendChild(overlay);
+
+    
+});
+        
+    </script>
+    <!-- Floating Book Now Button -->
+    <a href="https://thetardisbeauty.setmore.com/" target="_blank" rel="noopener" class="booknow-float" aria-label="Book an appointment online">
+      📅 <span class="btn-label">Book Now</span>
+    </a>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/971585784100?text=Hi!%20I'd%20like%20to%20book%20a%20beauty%20service" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.921.535 3.717 1.463 5.246L2 22l4.878-1.44A9.955 9.955 0 0 0 12.001 22C17.523 22 22 17.523 22 12S17.523 2 12.001 2zm0 18.031a8 8 0 0 1-4.083-1.117l-.293-.174-3.017.891.905-2.965-.19-.303A7.98 7.98 0 0 1 4 12c0-4.411 3.589-8 8.001-8C16.412 4 20 7.589 20 12s-3.588 8.031-7.999 8.031z"/>
+      </svg>
+    </a>
+    <style>
+      .whatsapp-float {
+        position: fixed;
+        bottom: 22px;
+        right: 22px;
+        background-color: #25D366;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        z-index: 1050;
+        transition: transform 0.2s ease;
+      }
+      .whatsapp-float:hover {
+        transform: scale(1.08);
+      }
+      @media (max-width: 480px) {
+        .whatsapp-float {
+          bottom: 16px;
+          right: 16px;
+          width: 52px;
+          height: 52px;
+        }
+      }
+    </style>
+</body>
+</html>

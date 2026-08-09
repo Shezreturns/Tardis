@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lash and brow tips, guides and industry insights from The TARDIS Beauty Emporium, Dubai.">
+  <title>Blog | The TARDIS Beauty Emporium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to left, #25255f, #a97fbf, pink);
+      min-height: 100vh;
+      color: #333;
+    }
+    header {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    header a.back-btn {
+      color: pink;
+      background-color: #25255f;
+      padding: 10px 19px;
+      border-radius: 3px;
+      border: 4px solid white;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+    }
+    header h1 {
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.6rem;
+      margin: 0;
+    }
+    .blog-hero {
+      text-align: center;
+      padding: 10px 20px 30px;
+      color: #fff;
+    }
+    .blog-hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 800;
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+    .blog-hero p {
+      opacity: 0.9;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .blog-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 10px 20px 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .post-card {
+      background: rgba(255,255,255,0.92);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease;
+    }
+    .post-card:hover {
+      transform: translateY(-6px);
+    }
+    .post-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .post-card .post-body {
+      padding: 18px 20px 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .post-tag {
+      display: inline-block;
+      background: #E8BDFF;
+      color: #25255f;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      width: fit-content;
+    }
+    .post-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: #25255f;
+      margin: 0 0 10px;
+      font-size: 1.3rem;
+    }
+    .post-card p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0 0 16px;
+      flex: 1;
+    }
+    .read-more {
+      align-self: flex-start;
+      background: #25255f;
+      color: #fff;
+      text-decoration: none;
+      padding: 9px 20px;
+      border-radius: 24px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s ease;
+    }
+    .read-more:hover {
+      background: #a97fbf;
+    }
+    @media (max-width: 480px) {
+      .blog-hero h2 { font-size: 1.7rem; }
+      header h1 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="./index.html" class="back-btn">Go Back</a>
+    <h1>The TARDIS Beauty Emporium</h1>
+  </header>
+
+  <div class="blog-hero">
+    <h2>Beauty Blog</h2>
+    <p>Lash &amp; brow tips, guides and insider knowledge from our beauty and training experts.</p>
+  </div>
+
+  <div class="blog-grid">
+    <div class="post-card">
+      <img src="./Screenshot_31-7-2025_235315_www.instagram.com.jpeg" alt="Close up of eyelash extensions" loading="lazy">
+      <div class="post-body">
+        <span class="post-tag">Eyelashes</span>
+        <h3>Why Eyelash Extensions Matter More Than You Think</h3>
+        <p>From saving time on your morning routine to boosting confidence in every photo, here's why lash extensions have become a beauty essential, and how to pick the right style for your eyes.</p>
+        <a href="./blog-eyelash-importance.html" class="read-more">Read Article →</a>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <img src="./Screenshot_31-7-2025_235139_www.instagram.com.jpeg" alt="Well groomed eyebrows" loading="lazy">
+      <div class="post-body">
+        <span class="post-tag">Brows</span>
+        <h3>Brow Lamination vs Microblading: How to Choose</h3>
+        <p>Two very different treatments that solve two very different brow problems. Here's how to know which one is actually right for you.</p>
+        <a href="./blog-brow-guide.html" class="read-more">Read Article →</a>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <img src="./brow-gallery-1.jpg" alt="Brow lamination before and after result" loading="lazy">
+      <div class="post-body">
+        <span class="post-tag">Brows</span>
+        <h3>Brow Lamination Aftercare: How to Make Results Last</h3>
+        <p>You've just had your brows laminated and tinted — here's exactly how to look after them so that brushed-up, fuller look lasts as long as possible.</p>
+        <a href="./blog-brow-lamination-aftercare.html" class="read-more">Read Article →</a>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <img src="./lash-gallery-8.jpg" alt="Freshly applied eyelash extensions" loading="lazy">
+      <div class="post-body">
+        <span class="post-tag">Eyelashes</span>
+        <h3>Lash Lift vs Lash Extensions: Which One Actually Suits You?</h3>
+        <p>Both give you dramatic lashes without mascara, but they work very differently. Here's how to pick between a lash lift and lash extensions.</p>
+        <a href="./blog-lash-lift-vs-extensions.html" class="read-more">Read Article →</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

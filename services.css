@@ -1,0 +1,357 @@
+/* services.css */
+
+/* Base Reset */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(to left , #656594,rgb(241, 190, 198));
+  
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdf6f9;
+  padding: 20px;
+  color: #333;
+}
+
+/* Service Section */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 46px;
+  font-style: italic;
+  margin-bottom: 12px;
+  color: #25255f;
+}
+
+.page-subtitle {
+  text-align: center;
+  color: #6b5c72;
+  font-size: 1rem;
+  max-width: 560px;
+  margin: 0 auto 36px;
+  line-height: 1.5;
+}
+
+/* Persistent header booking CTA (service pages) */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px 50px 0;
+}
+
+.header-book-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgb(248, 225, 229);
+  color: #25255f !important;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(37,37,95,0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  border: 2px solid #25255f;
+}
+
+.header-book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(37,37,95,0.25);
+  background-color: #fff;
+}
+
+@media (max-width: 480px) {
+  .header-actions {
+    padding-left: 20px;
+  }
+}
+
+/* ============ Service Cards ============ */
+
+.service-box {
+  background-color: rgb(248, 225, 229);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin-bottom: 22px;
+  box-shadow: 0 3px 10px rgba(37,37,95,0.1);
+  border-left: 5px solid #25255f;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(37,37,95,0.18);
+}
+
+/* Optional photo thumbnail (used on pages that have real result photos) */
+.service-thumb {
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 12px rgba(37,37,95,0.25);
+}
+
+.service-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.second-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+}
+
+.main {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #25255f;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.second {
+  margin: 12px 0 14px;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Price shown as a small pill instead of a plain line of text */
+.price-tag {
+  display: inline-block;
+  background-color: #25255f;
+  color: #ffd7e2;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin: 0;
+}
+
+/* Book Now button — the main click target, made deliberately prominent */
+button.book-btn,
+.main button {
+  background-color: #25255f;
+  color: pink;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 16px rgba(37,37,95,0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.book-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+button.book-btn:hover,
+.main button:hover {
+  background-color: #3b3b82;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 22px rgba(37,37,95,0.45);
+}
+
+button.book-btn:active,
+.main button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+button.book-btn:focus-visible,
+.main button:focus-visible {
+  outline: 3px solid rgb(241, 190, 198);
+  outline-offset: 2px;
+}
+
+/* fallback for any un-classed buttons */
+button {
+  background-color: #25255f;
+  color: pink;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* ============ Real Results Gallery (eyelash page) ============ */
+
+.gallery-section {
+  margin: 10px 0 48px;
+}
+
+.gallery-heading {
+  text-align: center;
+  font-family: 'Playfair Display SC', serif;
+  font-style: italic;
+  color: #25255f;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.gallery-subtext {
+  text-align: center;
+  color: #6b5c72;
+  margin-bottom: 26px;
+}
+
+.lash-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.lash-gallery-item {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(37,37,95,0.18);
+  aspect-ratio: 1 / 1;
+  background-color: rgb(248, 225, 229);
+}
+
+.lash-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.lash-gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.lash-video-wrap {
+  max-width: 340px;
+  margin: 30px auto 0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(37,37,95,0.28);
+  border: 4px solid #fff;
+  background: #000;
+}
+
+.lash-video-wrap video {
+  width: 100%;
+  display: block;
+}
+
+.lash-video-caption {
+  text-align: center;
+  color: #6b5c72;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.gallery-cta-wrap {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.gallery-cta-wrap .header-book-btn {
+  border: 2px solid #25255f;
+}
+
+/* ✅ Responsive Styles */
+@media (max-width: 768px) {
+  .second-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main {
+    font-size: 1.1rem;
+  }
+
+  .service-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .service-thumb {
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+  }
+
+  button {
+    width: auto;
+  text-align: center;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .lash-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .main {
+    font-size: 1rem;
+  }
+
+  .second {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 1rem;
+    width: auto;          /* prevent full width */
+    padding: 8px 16px;    /* reduce vertical space */
+  }
+
+  button.book-btn,
+  .main button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .header-actions {
+    padding-left: 12px;
+  }
+  
+}
+/* Add to services.css */
+/* Search container styling */
